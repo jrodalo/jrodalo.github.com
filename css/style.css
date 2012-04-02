@@ -13,7 +13,7 @@ body {
 .layout {
 		background: #FFF;
 		border: 1px solid #CCC;
-		border-radius: 0 0 10px 10px;
+		border-radius: 10px;
 		box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
 		position: absolute; 
 		top: 50%; 
@@ -22,7 +22,7 @@ body {
 		margin: -150px 0 0 -125px;
 		padding: 10px;
 }
-.avatar {display: block;}
+.avatar {display: block; margin: 0 auto;}
 .social {text-align: center; margin-top: 10px; height: 24px;}
 .social li {display: inline-block;}
 .social a {
@@ -51,6 +51,6 @@ body {
 
 @media screen and (max-width: 480px) {
 
-	.layout {position: relative; left: auto; right: auto; margin: 0 auto;}
+	.layout {position: relative; left: auto; right: auto; margin: 0 auto; width: auto; border-radius: 0;}
 
 }

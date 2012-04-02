@@ -1,0 +1,56 @@
+html, body, div, p, h1, h2, h3, h4, h5, h6,
+form, fieldset, legend, ul, ol, li, img,
+table, thead, tbody, tr, td, caption {margin: 0; padding: 0;}
+
+html {font-size: 100%;}
+
+body {
+    background: #EEE url(../img/ruido.png);
+    color: #333;
+    font: 0.9em/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.layout {
+		background: #FFF;
+		border: 1px solid #CCC;
+		border-radius: 0 0 10px 10px;
+		box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+		position: absolute; 
+		top: 50%; 
+		left: 50%; 
+		width: 250px;
+		margin: -150px 0 0 -125px;
+		padding: 10px;
+}
+.avatar {display: block;}
+.social {text-align: center; margin-top: 10px; height: 24px;}
+.social li {display: inline-block;}
+.social a {
+		background-image: url(../img/iconos.png);
+		background-repeat: none;
+		display: block;
+		height: 24px;
+		width: 24px;
+		margin: 0 10px;
+		text-indent: 105%;
+		white-space: nowrap;
+		overflow: hidden;
+		opacity: 0.8;
+		-webkit-transition: opacity .2s ease-in;
+		   -moz-transition: opacity .2s ease-in;
+  		     -o-transition: opacity .2s ease-in;
+			    transition: opacity .2s ease-in;
+}
+.social a:hover {opacity: 1;}
+
+.flickr 	{background-position: 0 0;}
+.twitter 	{background-position: 0 -50px;}
+.linkedin 	{background-position: 0 -100px;}
+.github 	{background-position: 0 -150px;}
+.delicious	{background-position: 0 -200px;}
+
+@media screen and (max-width: 480px) {
+
+	.layout {position: relative; left: auto; right: auto; margin: 0 auto;}
+
+}

@@ -16,22 +16,26 @@ window.onload = function() {
 
 var Pizarra = {
 
-	config: { ancho: 600, alto: 600 },
+	config: { 
+		ancho: window.innerWidth, 
+		alto: window.innerHeight
+	},
 
 	iniciar: function(canvas) {
 
-		var layout = document.getElementById("contenido"),
-			capaPizarra = document.createElement("div"),
+		var capaPizarra = document.createElement("div"),
 			context = canvas.getContext("2d");
 
 		canvas.setAttribute("width", Pizarra.config.ancho);
 		canvas.setAttribute("height", Pizarra.config.alto);
-		canvas.addEventListener("mousemove", function(evt) { Pizarra.pintar(canvas, context, evt); }, false);
 
 		capaPizarra.id = "pizarra";
+		capaPizarra.style.marginLeft = "-" + (Pizarra.config.ancho / 2) + "px";
+		capaPizarra.style.marginTop = "-" + (Pizarra.config.alto / 2) + "px";
 		capaPizarra.appendChild(canvas);
 
-		layout.parentNode.insertBefore(capaPizarra, layout);
+		document.body.insertBefore(capaPizarra, document.body.firstChild);
+		document.addEventListener("mousemove", function(evt) { Pizarra.pintar(canvas, context, evt); }, false);
 	},
 
 	pintar: function(canvas, context, evt) {

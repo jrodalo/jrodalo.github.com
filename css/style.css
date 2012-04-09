@@ -6,12 +6,12 @@ html, body, div, p, h1, h2, h3, h4, h5, h6,
 form, fieldset, legend, ul, ol, li, img,
 table, thead, tbody, tr, td, caption {margin: 0; padding: 0;}
 
-html {font-size: 100%;}
+html {font-size: 100%; overflow: hidden;}
 
 body {
     background: #EEE url(../img/ruido.png);
     color: #333;
-    font: 0.9em/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 0.9em/1.4 Helvetica, Arial, sans-serif;
 }
 
 .layout {
@@ -23,7 +23,8 @@ body {
 	top: 50%; 
 	left: 50%;
 	width: 250px;
-	margin: -150px 0 0 -125px;
+	height: 285px;
+	margin: -152px 0 0 -135px;
 	padding: 10px;
 }
 
@@ -54,12 +55,11 @@ body {
 .github 	{background-position: 0 -150px;}
 .delicious	{background-position: 0 -200px;}
 
-
-#pizarra {width: 600px; height: 600px; margin: -300px 0 0 -300px; position: absolute; top: 50%; left: 50%;}
-
+#pizarra {position: absolute; top: 50%; left: 50%;}
 
 @media screen and (max-width: 480px) {
 
 	.layout {position: relative; left: auto; right: auto; margin: 0 auto; width: auto; border-radius: 0;}
+	#pizarra {display: none;}
 
 }

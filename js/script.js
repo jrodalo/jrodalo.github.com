@@ -23,8 +23,6 @@ var Pizarra = {
 		canvas.setAttribute("height", Pizarra.config.alto);
 
 		capaPizarra.className = "pizarra";
-		capaPizarra.style.marginLeft = "-" + (Pizarra.config.ancho / 2) + "px";
-		capaPizarra.style.marginTop = "-" + (Pizarra.config.alto / 2) + "px";
 		capaPizarra.appendChild(canvas);
 
 		document.body.insertBefore(capaPizarra, document.body.firstChild);

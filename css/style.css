@@ -54,10 +54,6 @@ body {
 .github 	{background-position: 0 -150px;}
 .delicious	{background-position: 0 -200px;}
 
-
-.pizarra {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
-
-
 @media screen and (max-width: 480px) {
 
 	.layout {position: relative; left: auto; right: auto; margin: 0 auto; width: auto; border-radius: 0;}

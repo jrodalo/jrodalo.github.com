@@ -2,41 +2,44 @@
  * jrodalo.github.com by @jrodalo
  */
 
-var Pizarra = {
+var Pizarra = function() {
 
-	config: {
+	"use strict";
+
+	var config = {
 		ancho: window.innerWidth,
 		alto: window.innerHeight,
 		color: "#DDD"
-	},
+	};
 
-	iniciar: function() {
+	function init() {
 
 		var canvas = document.createElement("canvas");
 
 		if ( ! canvas || ! canvas.getContext) { return; }
 
-		canvas.setAttribute("width", Pizarra.config.ancho);
-		canvas.setAttribute("height", Pizarra.config.alto);
+		canvas.setAttribute("width", config.ancho);
+		canvas.setAttribute("height", config.alto);
 
 		document.body.insertBefore(canvas, document.body.firstChild);
 
 		var context = canvas.getContext("2d");
 
 		document.addEventListener("mousemove", function(evt) {
-			Pizarra.pintar(context, evt);
+			pintar(context, evt);
 		}, false);
-	},
+	}
 
-	pintar: function(context, evt) {
+	function pintar(context, evt) {
 
 		context.beginPath();
-		context.moveTo(Pizarra.config.ancho / 2, Pizarra.config.alto / 2);
+		context.moveTo(config.ancho / 2, config.alto / 2);
 		context.lineTo(evt.clientX, evt.clientY);
-		context.strokeStyle = Pizarra.config.color;
+		context.strokeStyle = config.color;
 		context.stroke();
 	}
 
-};
+	return {init: init};
+}();
 
-Pizarra.iniciar();
+Pizarra.init();

@@ -57,6 +57,6 @@ body {
 @media screen and (max-width: 480px) {
 
 	.layout {position: relative; left: auto; right: auto; margin: 0 auto; width: auto; border-radius: 0;}
-	.pizarra {display: none;}
+	canvas {display: none;}
 
 }

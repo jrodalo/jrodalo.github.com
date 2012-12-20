@@ -16,20 +16,19 @@ var Pizarra = {
 
 		if ( ! canvas || ! canvas.getContext) { return; }
 
-		var capaPizarra = document.createElement("div"),
-			context = canvas.getContext("2d");
-
 		canvas.setAttribute("width", Pizarra.config.ancho);
 		canvas.setAttribute("height", Pizarra.config.alto);
 
-		capaPizarra.className = "pizarra";
-		capaPizarra.appendChild(canvas);
+		document.body.insertBefore(canvas, document.body.firstChild);
 
-		document.body.insertBefore(capaPizarra, document.body.firstChild);
-		document.addEventListener("mousemove", function(evt) { Pizarra.pintar(canvas, context, evt); }, false);
+		var context = canvas.getContext("2d");
+
+		document.addEventListener("mousemove", function(evt) {
+			Pizarra.pintar(context, evt);
+		}, false);
 	},
 
-	pintar: function(canvas, context, evt) {
+	pintar: function(context, evt) {
 
 		context.beginPath();
 		context.moveTo(Pizarra.config.ancho / 2, Pizarra.config.alto / 2);
